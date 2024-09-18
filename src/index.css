@@ -1,0 +1,83 @@
+/* =====================GOOGLE FRONTS============================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* ========================VARIABLE========================== */
+
+:root {
+  --main-color: #e02f6b;
+  --blue: #0000ff;
+  --blue-dark: #18293c;
+  --orange: #ffa500;
+  --green-yellow: #cddc39;
+  --pink-light: #efa2b4;
+  --cyan-lingh: #aef1ee;
+  --white: #ffffff;
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
+  --white-alpha-25: rgba(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(10px);
+}
+/* ==================GLOBAL SETTINGS=========================== */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    to bottom right,
+    var(--pink-light),
+    var(--cyan-lingh)
+  );
+  font-size: 16px;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: var(--blue-dark);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+body::after {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--green-yellow);
+  opacity: 0.12;
+  z-index: -1;
+}
+body,
+textarea,
+button,
+input {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+/* custom scrollbar  */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+::after,
+::before {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}

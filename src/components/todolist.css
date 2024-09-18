@@ -1,0 +1,364 @@
+/* ========================VARIABLE========================== */
+
+:root {
+  --main-color: #e02f6b;
+  --blue: #0000ff;
+  --blue-dark: #18293c;
+  --orange: #ffa500;
+  --green-yellow: #cddc39;
+  --pink-light: #efa2b4;
+  --cyan-lingh: #aef1ee;
+  --white: #ffffff;
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
+  --white-alpha-25: rgba(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(10px);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.content {
+  width: 700px;
+  height: 600px;
+  background-color: var(--white-alpha-40);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding: 0 32px;
+  overflow: auto;
+}
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+.form {
+  text-align: center;
+}
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.active {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+/* From Uiverse.io by mrhyddenn */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  /* max-width: 200px; */
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: var(--blue-dark);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--main-color), #38caef);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+.update i,
+.delete i {
+  font-size: 26px;
+  color: var(--white);
+  transform: all 1s linear;
+}
+.update i:hover,
+.delete i:hover {
+  color: var(--main-color);
+  transition: calc(1.1);
+}
+/* From Uiverse.io by boryanakrasteva */
+/* Customize the label (the checkbox-btn) */
+.checkbox-btn {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-btn label {
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 2.5px solid #ffffff;
+  transition: 0.2s linear;
+}
+.checkbox-btn input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  top: 40%;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #0ea021;
+  filter: drop-shadow(0px 0px 10px #0ea021);
+  border-width: 0 2.5px 2.5px 0;
+  transition: 0.2s linear;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+}
+
+/* Show the checkmark when checked */
+.checkbox-btn input:checked ~ .checkmark:after {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  animation: pulse 1s ease-in;
+}
+
+.checkbox-btn input:checked ~ .checkmark {
+  transform: rotate(45deg);
+  border: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.6);
+  }
+}
+.check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.check_item {
+  margin-top: 10px;
+}
+/* From Uiverse.io by nikk7007 */
+.button {
+  --color: var(--main-color);
+  padding: 0.5em 1.3em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  color: var(--white);
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+/* From Uiverse.io by shadowmurphy */
+.input {
+  border: 2px solid transparent;
+  width: 30%;
+  height: 50px;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid var(--pink-light);
+  box-shadow: 0px 0px 0px 3px rgba(240, 69, 163, 0.2);
+  background-color: white;
+}
+.input_todo {
+  text-align: center;
+}
+.input_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 60px;
+}
+.css-19wsa2m-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: var(--main-color) !important;
+}
+.css-1sj2jcg-MuiTabs-indicator {
+  background-color: var(--main-color) !important;
+}
+.error {
+  display: block;
+  text-align: left;
+  color: #ff204e;
+  margin-left: 460px;
+  margin-top: 10px;
+}
+/* edit form */
+.edit_form {
+  margin: auto;
+  margin-top: 60px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 550px;
+  height: 230px;
+  z-index: 200px;
+}
+
+.edit_form .input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.edit_form .button {
+  margin-right: 10px;
+}
+.container_edit {
+  background-color: var(--white-alpha-40);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+}
+.button_edit {
+  margin-top: 10px;
+  text-align: right;
+}
+h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.button.btn_edit {
+  height: 40px;
+}
+.error_edit {
+  display: block;
+  text-align: left;
+  color: #ff204e;
+  font-size: 14px;
+}
